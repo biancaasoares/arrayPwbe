@@ -152,6 +152,12 @@ const cadastrarProdutos = function(){
                             {id: 6, nome_marca: 'Logitech'},
                             {id: 7, nome_marca: 'Multilaser'}
                        ];
+      // cria objeto array para guardar os produtos
+       let arrayProdutos = [];
+
+     // cria o objeto JSON para colocar o array de produtos
+     let jsonProdutos = {};
+
 
 let listaDeCategorias =  [          
                             {id: 1 , nome_categoria: 'Periférico' , descricao_categoria: 'Perifericos de computador'},
@@ -199,8 +205,19 @@ let produto2 = {
              cor: listaDeCores
      
               } ;
-                               
-        console.log(produto2);
+
+              //add os produtos em um array de produtos
+              arrayProdutos.push(produto1);
+              arrayProdutos.push(produto2);
+
+              //add o array com todos os produtos em um JSON
+              jsonProdutos.lista_produtos = arrayProdutos;
+              //retorna a qtde de itens no JSON
+              jsonProdutos.count = arrayProdutos.length;
+
+              console.log(jsonProdutos);
+
+        
 }
 
 cadastrarProdutos();
